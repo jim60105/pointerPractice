@@ -63,12 +63,15 @@ makeQueue ()
     void
 listQuene ( Node* head )
 {
+    cout<<endl;
     cout<<"現在已存在之元素:"<<endl;
-    Node* cur=head;
+    Node* cur=head->next;
+    cout<<head->value;
     while(cur!=NULL){
-         cout<<cur->value<<",";
+         cout<<","<<cur->value;
          cur=cur->next;
     }
+    cout<<endl;
 }		/* -----  end of function listQuene  ----- */
 
 
@@ -114,7 +117,7 @@ addToQuene ( Node* head, int position, int value )
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  delFromQuene
- *  Description:  
+ *  Description:  刪除元素
  * =====================================================================================
  */
     Node*
@@ -147,7 +150,7 @@ delFromQuene( Node* head, int position )
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  sortQuene
- *  Description:  
+ *  Description:  排序元素
  * =====================================================================================
  */
     void
@@ -191,8 +194,8 @@ main ( int argc, char *argv[] )
     bool exit = false;
     while(!exit){
         listQuene(head);
-        cout<<"要執行的指令:"<<endl;
         cout<<"1)指定位置插入元素\n2)指定位置刪除元素\n3)排序元素\n4)結束"<<endl;
+        cout<<"要執行的指令:";
         
         int select;
         cin>>select;
@@ -208,7 +211,7 @@ main ( int argc, char *argv[] )
                 head = addToQuene(head,position,value);
                 break;
             case 2:
-                cout<<"位置?(0 base)"<<endl;
+                cout<<"位置?(0 base)";
                 cin>>position;
                 head = delFromQuene(head,position);
                 break;
